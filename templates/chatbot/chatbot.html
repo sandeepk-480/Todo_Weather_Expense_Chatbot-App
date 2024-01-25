@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Chatbot App{% endblock  %}
+
+{% block body %}
+
+<h1 class="text-center text-light mt-4">Chatbot App</h1>
+
+<!-- Button trigger modal -->
+<div class="d-flex justify-content-center mt-4">
+    <button type="button" class="btn btn-primary border-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        List Of Questions You Can Ask
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-info">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">These are the list of some predefined Questions</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p>Hi, hello, hey</p>
+            <p>How's the weather today <u>or</u> Today's forecast?</p>
+            <p>tell me a joke</p>
+            <p>what's the time</p>
+            <p>Help me with this</p>
+            <p>What is your name</p>
+            <p>Tell me a fun fact</p>
+            <p>Recommend me some music</p>
+            </div>                
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+    <div style="width: 20rem;">
+        <form action="{% url "chatbot" %}" method="post" class="d-flex">
+            {% csrf_token %}
+            <input class="rounded-3 p-2 ms-2 form-control" type="text" name="user_input"  placeholder="Enter your input..." required> 
+            <button class="btn btn-success mx-3 p-2 px-3 border-dark align-item-center" type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-sm-3"></div>
+
+    <div class="col-sm-6">
+        <ul id="msg" class="bg-white">
+            {% if chat_message.user_input %}
+                <li>
+                    <p class="d-flex justify-content-between">{{ chat_message.user_input }} <a href="del/{{chat_message.id}}/" class="text-danger">del</a></p>
+                    <p><strong>Chatbot:</strong> {{ chat_message.bot_response }}</p>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+
+ 
+{% endblock  %}
+
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        let prev = {{previous_interactions|safe}};
+        let output = '';
+        let a = document.getElementById('msg'); 
+
+        for (let i=0; i<prev.length; i++){
+            output += `<li>
+                <p class="d-flex justify-content-between">${ prev[i].user_input } <a href="del/${prev[i].id}/" class="text-danger">del</a></p>
+                <p><strong>Chatbot:</strong> ${ prev[i].bot_response }</p>
+            </li>`
+        };
+    
+        a.innerHTML = output
+    })
+
+</script>
+{% endblock  %}

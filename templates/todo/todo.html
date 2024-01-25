@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Todo App{% endblock  %}
+
+{% block body %}
+
+<div class=" d-block  text-center  mt-4">
+    {% if messages %}
+        {% for message in messages %}
+            <span class="message-js alert alert-{{message.tags}}">{{message}}</span>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<h1 class="text-center text-light mt-4">Todo App</h1>
+
+<div class="d-flex justify-content-center mt-5">
+    <div style="width: 20rem;">
+        <form action="{% url "add" %}" method="post" class="d-flex">
+            {% csrf_token %}
+            <input class="rounded-3 p-2 ms-2 form-control" type="text" name="input"  placeholder="Enter name of task" required> 
+            <button class="btn btn-success mx-3 p-2 px-3 border-dark align-item-center" type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+<div class="row p-2 mt-5">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in tasks %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{t.name}}</td>
+                        <td>{{t.date}}</td>
+                        <td>{{t.status}}</td>
+                        <td>
+                            <a href="delete/{{t.id}}/" class="btn btn-danger btn-sm" type="button">Delete</a>
+                            <a href="finish/{{t.id}}/" class="btn btn-warning btn-sm" type="button">Finished</a>                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-sm-2"></div>
+
+{% endblock  %}
+
