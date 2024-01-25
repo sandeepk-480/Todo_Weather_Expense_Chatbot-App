@@ -33,4 +33,4 @@ It has input area to Enter your input.
 API_KEY=1234wgd56<br>
 this is some random words<br>
 5) Run the project-<br>
-"python manage.py runserver"<br>
+python manage.py runserver<br>
