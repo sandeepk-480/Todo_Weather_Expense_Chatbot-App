@@ -25,12 +25,12 @@ It has input area to Enter your input.
 <h2> How to Use the Project</h2>
 1) Open any of your code editor (VsCode or Pycharm).<br>
 2) Create a Virtual Environment (optional but recommended).<br>
-3) In terminal write this code:<br>
+3) In terminal write this code: <br>
 - git clone https://github.com/sandeepk-480/Todo_Weather_Expense_Chatbot-App.git <br>
 - cd Todo_Weather_Expense_Chatbot-App <br>
 - pip install -r req.txt<br>
-4) Since i am not gonna include my Weather Api key, Ti would be better if you include your's <u>or</u> atleast create a ".env" file in the root directory of your project to prevent errors, and write this inside .env file:<br>
-- <b>API_KEY=1234wgd56</b><br>
+4) Since i am not gonna include my Weather Api key, Ti would be better if you include your's <u>or</u> atleast create a ".env" file in the root directory of your project to prevent errors, and write this inside .env file: <br>
+ <b>API_KEY=1234wgd56</b><br>
 these are some random words<br>
-5) Run the project-<br>
+5) Run the project- <br>
 python manage.py runserver<br>
