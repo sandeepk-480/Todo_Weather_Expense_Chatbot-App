@@ -1,6 +1,6 @@
 <h3>Todo App, Weather App, Expense App, Chatbot App Compliled in a Django Project.</h3><br>
 
-I this Project there are 4 apps-<br>
+This Project Consist of 4 apps-<br>
 1) Todo:<br>
 - We can add task Here<br>
 - The added task is shown in the form of a table.<br>
@@ -24,10 +24,13 @@ It has input area to Enter your input.
 
 <h2> How to Use the Project</h2>
 1) Open any of your code editor (VsCode or Pycharm).<br>
-2) Create a Virtual Environment (optional but recommended).
-3) In terminal write this code:
+2) Create a Virtual Environment (optional but recommended).<br>
+3) In terminal write this code:<br>
 - "https://github.com/sandeepk-480/Todo_Weather_Expense_Chatbot-App.git" <br>
 - pip install -r requirements.txt<br>
 4) Since i will not include my Weather Api key better include your's or atleast create a ".env" file in the root directory of your project to prevent errors, and write this inside .env file-<br>
 API_KEY=1234wgd56<br>
-this is some random words
+this is some random words<br>
+5) cd <br>
+6) Run the project-<br>
+"python manage.py runserver"<br>
