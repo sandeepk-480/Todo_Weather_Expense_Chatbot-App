@@ -27,10 +27,10 @@ It has input area to Enter your input.
 2) Create a Virtual Environment (optional but recommended).<br>
 3) In terminal write this code:<br>
 - "git clone https://github.com/sandeepk-480/Todo_Weather_Expense_Chatbot-App.git" <br>
+- cd Todo_Weather_Expense_Chatbot-App <br>
 - pip install -r requirements.txt<br>
 4) Since i will not include my Weather Api key better include your's or atleast create a ".env" file in the root directory of your project to prevent errors, and write this inside .env file-<br>
 API_KEY=1234wgd56<br>
 this is some random words<br>
-5) cd Todo_Weather_Expense_Chatbot-App <br>
-6) Run the project-<br>
+5) Run the project-<br>
 "python manage.py runserver"<br>
