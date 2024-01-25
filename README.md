@@ -30,7 +30,7 @@ It has input area to Enter your input.
 - cd Todo_Weather_Expense_Chatbot-App <br>
 - pip install -r req.txt<br>
 4) Since i will not include my Weather Api key better include your's or atleast create a ".env" file in the root directory of your project to prevent errors, and write this inside .env file-<br>
-API_KEY=1234wgd56<br>
+<b>API_KEY=1234wgd56</b><br>
 this is some random words<br>
 5) Run the project-<br>
 python manage.py runserver<br>
